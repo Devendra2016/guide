@@ -8,3 +8,15 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+app.use(bodyParser.urlencoded({ extended: true }));
+app.post('/name',function(req,res){
+  
+  var jsonObj=req.body.first+' '+req.body.last;
+res.send({name:jsonObj});
+  console.log(req.body.first+' '+req.body.last);
+  
+})
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/views/index.html'));
+});
